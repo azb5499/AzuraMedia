@@ -19,3 +19,6 @@ delete car.company;
 console.log(car);
 console.log(car.features);
 
+const features = Object.values(car.features);
+console.log(features);
+
