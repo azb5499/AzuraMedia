@@ -46,3 +46,7 @@ const car1 = new Car("Toyota","Corolla","2019","White");
 console.log(car1);
 
 Car.prototype.vin = "123456789";
+
+function GetDate() {
+    return new Date().getFullYear();
+}
