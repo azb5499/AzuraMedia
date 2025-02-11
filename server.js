@@ -77,6 +77,32 @@ const server = http.createServer((req, res) => {
     }
 });
 
+(function createPeriodicRecord() {
+    let yearCount = 2000;
+    setInterval(() => {
+        const BMW = new Vehicle(
+            "BMW",
+            yearCount,
+            Math.floor(Math.random() * (100000 - 50000 + 1)) + 50000,
+            "white",
+            "CT",
+            Math.floor(Math.random() * (150000 - 100000 + 1)) + 100000
+        );
+        const Volkswagen = new Vehicle(
+            "VolksWagen",
+            yearCount,
+            Math.floor(Math.random() * (100000 - 50000 + 1)) + 50000,
+            "black",
+            "JHB",
+            Math.floor(Math.random() * (150000 - 100000 + 1)) + 100000
+        ); 
+        dataStorage.addRecord(BMW);
+        dataStorage.addRecord(Volkswagen);
+        yearCount++;
+    }, 20 * 1000); // 20 seconds in milliseconds
+})();
+
+
 function serveFile(filePath, contentType, res) {
     try {
         const content = fileSystem.readFileSync(filePath);
