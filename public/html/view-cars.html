@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SeeMyCars</title>
 </head>
+
 <body>
     <h1>Look at my cars</h1>
+
+    <div class="search-container">
+        <input type="number" id="searchId" placeholder="Enter car ID">
+        <button onclick="findCarById()">Find Car</button>
+        <div id="searchResult"></div>
+    </div>
+
+
     <table id="vehiclesTable">
         <thead>
             <tr>
@@ -24,4 +34,5 @@
     </table>
     <script src="/scripts/view-cars.js"></script>
 </body>
+
 </html>
