@@ -1,0 +1,12 @@
+{
+  "name": "azuramedia",
+  "version": "1.0.0",
+  "description": "This application is a simple data capture and data output program. This is a web based system using Node.js and html with a simple Relational database backing up the system. We capture car information and then save it to a database. There are many conditions that the information needs to be saved in but thats simple to deal with.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
