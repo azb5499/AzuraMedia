@@ -52,7 +52,11 @@ const server = http.createServer((req, res) => {
             break;
         case "/view-cars":
             serveFile('./public/html/view-cars.html', 'text/html', res);
-            // Get all records from dataStorage
+            break;
+        case "/api/cars":
+            const allRecords = dataStorage.getAllRecords();
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(allRecords));
             break;
         default:
             if (req.url.match(/\.(css|js|png|jpg|jpeg|gif)$/)) {
@@ -95,7 +99,7 @@ const server = http.createServer((req, res) => {
             "black",
             "JHB",
             Math.floor(Math.random() * (150000 - 100000 + 1)) + 100000
-        ); 
+        );
         dataStorage.addRecord(BMW);
         dataStorage.addRecord(Volkswagen);
         yearCount++;

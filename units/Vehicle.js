@@ -22,9 +22,6 @@ class Vehicle {
         return true;
     }
 
-    // toString() {
-    //     return `Vehicle(${this.make} ${this.model}, ${this.km}km, R${this.value})`;
-    // }
 }
 
 module.exports = Vehicle;
