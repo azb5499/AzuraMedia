@@ -1,11 +1,11 @@
-const dataStorage = require('./units/DummyDataStore.js');
+const dataStorage = require('./units/DBDataStore.js');
 const Vehicle = require('./units/Vehicle.js');
 
 const http = require('http');
 const fileSystem = require('fs');
 const path = require('path');
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
     if (req.method === 'POST') {
         let body = '';
         req.on('data', chunk => {
@@ -54,7 +54,7 @@ const server = http.createServer((req, res) => {
             serveFile('./public/html/view-cars.html', 'text/html', res);
             break;
         case "/api/cars":
-            const allRecords = dataStorage.getAllRecords();
+            const allRecords = await dataStorage.getAllRecords();
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(allRecords);
             break;
@@ -103,7 +103,7 @@ const server = http.createServer((req, res) => {
         dataStorage.addRecord(BMW);
         dataStorage.addRecord(Volkswagen);
         yearCount++;
-    }, 20 * 1000); // 20 seconds in milliseconds
+        }, 20 * 60 * 1000); // 20 minutes in milliseconds
 })();
 
 
