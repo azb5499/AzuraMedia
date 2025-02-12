@@ -28,3 +28,7 @@ I encountered some challenges, particularly with file imports and function execu
 Sharing my progress with friends was a highlight, as we were all exploring new concepts in JavaScript together. Working on this project after work each day, with limited time on weekends, made the experience even more satisfying.
 
 I'm grateful to have had the opportunity to work on this project. It was a challenging yet rewarding experience that helped me grow as a developer.
+
+### Finishing note
+
+Due to CSS not being part of what was required in the original project document. Myself and another collaborator worked together to make the UI look a lot more pleasent.
