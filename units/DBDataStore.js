@@ -1,6 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const IDataPersistence = require('./IDataPersistence');
 const path = require('path');
+const fs = require('fs');
 
 class DBDataStore extends IDataPersistence {
     constructor() {
@@ -8,6 +9,13 @@ class DBDataStore extends IDataPersistence {
             return DBDataStore.instance;
         }
         super();
+
+        const persistenceDir = path.join(__dirname, '..', 'persistence');
+        if (!fs.existsSync(persistenceDir)) {
+            fs.mkdirSync(persistenceDir);
+            console.log('Created persistence directory');
+        }
+
         const dbPath = path.join(__dirname, '..', 'persistence', 'Azura.db');
         this.db = new sqlite3.Database(dbPath, (err) => {
             if (err) {
@@ -15,7 +23,7 @@ class DBDataStore extends IDataPersistence {
             }
             console.log('Connected to the vehicles database.');
         });
-        
+
         const sql = `CREATE TABLE IF NOT EXISTS vehicles (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             make TEXT NOT NULL,
@@ -25,7 +33,7 @@ class DBDataStore extends IDataPersistence {
             location TEXT NOT NULL,
             value DECIMAL(10,2) NOT NULL CHECK (value >= 0)
         );`;
-        
+
         this.db.run(sql);
         DBDataStore.instance = this;
     }
@@ -34,7 +42,7 @@ class DBDataStore extends IDataPersistence {
         return new Promise((resolve, reject) => {
             const sql = `INSERT INTO vehicles (make, model, km, color, location, value)
                         VALUES (?, ?, ?, ?, ?, ?);`;
-            
+
             this.db.run(sql, [
                 vehicle.make,
                 vehicle.model,
@@ -42,7 +50,7 @@ class DBDataStore extends IDataPersistence {
                 vehicle.color,
                 vehicle.location,
                 vehicle.value
-            ], function(err) {
+            ], function (err) {
                 if (err) {
                     console.error('Error inserting vehicle:', err);
                     reject(err);
@@ -57,7 +65,7 @@ class DBDataStore extends IDataPersistence {
     async getAllRecords() {
         return new Promise((resolve, reject) => {
             const sql = `SELECT * FROM vehicles;`;
-            
+
             this.db.all(sql, [], (err, rows) => {
                 if (err) {
                     console.error('Error fetching vehicles:', err);
