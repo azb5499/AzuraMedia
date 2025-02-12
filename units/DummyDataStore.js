@@ -19,7 +19,7 @@ class DummyStore extends IDataPersistence {
     }
 
     getAllRecords(id) {
-        return this.data || null;
+        return JSON.stringify(this.data || null);
     }
 
     toStringNow() {

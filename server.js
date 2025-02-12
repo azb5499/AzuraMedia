@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
         case "/api/cars":
             const allRecords = dataStorage.getAllRecords();
             res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify(allRecords));
+            res.end(allRecords);
             break;
         default:
             if (req.url.match(/\.(css|js|png|jpg|jpeg|gif)$/)) {
