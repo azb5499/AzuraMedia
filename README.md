@@ -19,10 +19,6 @@ The documentation will be in a markdown file called [devNotes.md](planning\devNo
 
 ## Reflection.
 
-Here's a polished version of your reflection:
-
-Reflection on the Project Experience
-
 When I first received this project, I was daunted by the task. Although I had some familiarity with JavaScript, I knew I had to improve my skills quickly. With only six days to complete the project, I dedicated myself to learning and implementing JavaScript on the backend.
 
 This project was an invaluable learning experience. I gained hands-on knowledge of using JavaScript to communicate with the frontend and build a full-scale web application. I applied various programming principles, such as the Open-Closed Principle, Single Responsibility Principle, and other design patterns.
