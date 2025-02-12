@@ -8,7 +8,7 @@ Myself, the developer of this project has not had much experience in javascript 
 
 One final note. Due to AI being so prevelant and cheating in tests and assessments being so rife. I will be doing a full developmental breakdown. This will be done so any assessor can easily tell how this project was developed and know to some extent that AI was not used. And even if it was used, it will be described fully how in the documentation. 
 
-The documentation will be in a markdown file called [devNotes.md](planning\devNotes.md). Further information about the development of this project will be located there. Lets keep the README file nice and tidy😉🤣.
+The documentation will be in a markdown file called [devNotes.md](planning\devNotes.md),this link works if you download this project!. Further information about the development of this project will be located there. Lets keep the README file nice and tidy😉🤣.
 
 ## Packages used.
 - sqlite3 - `npm install sqlite3`

@@ -8,8 +8,7 @@ lerna-debug.log*
 .pnpm-debug.log*
 
 
-#planning folder
-planning/
+
 
 # the test document
 dev_test.docx

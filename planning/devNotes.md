@@ -7,6 +7,7 @@ Welcome to Dev notes. This will serve as a timeline and a place where you can se
 - [08/02/2025](#080225025). Continuation of 07/08/2025.
 - [09/02/2025](#09022025). Completion of JS.
 - [11/02/2025](#11022025). Start of project development.
+- [12/02/2025](#12022025). Completion of project development.
 # Appendix
 
 - [ChatGPT](https://chatgpt.com/)
@@ -467,6 +468,8 @@ let body = '';
 Connected the servers backend logic to create vehicle objects whenever the data is submitted and then sent that object over to the persistence layer. At this point it just saves and adds and ID  value based on the amount of objects stored.
 
 **23:50** - Completed the display of the data stored in the temporary storage. Also added the function that adds records periodically. Pretty easy once everything is a bunch of Objects.
+
+## 12/02/2025
 
 **00:20** - Completed the display for the cars. Converted the list of vehicle objects to JSON. Then sent that to the frontend via an api link since the frontend will have a solid link to recieve its data from. Then this will be displayed dynamically using a javascript script to iterate through the JSON and display it on the front-end.  
 
