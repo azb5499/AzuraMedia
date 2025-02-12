@@ -24,14 +24,12 @@ const server = http.createServer(async (req, res) => {
                         formData.get('location'),
                         formData.get('value')
                     );
-                    const vehicleJson = JSON.stringify(newVehicle);
-                    console.log('New vehicle JSON:', vehicleJson);
+                    
 
                     try {
                         newVehicle.validate();
                         dataStorage.addRecord(newVehicle);
-                        res.writeHead(200, { 'Content-Type': 'application/json' });
-                        res.end(JSON.stringify({ success: true, message: 'Vehicle added successfully' }));
+                        serveFile('./public/html/index.html', 'text/html', res);
                     } catch (error) {
                         res.writeHead(400, { 'Content-Type': 'application/json' });
                         res.end(JSON.stringify({ success: false, error: error.message }));
